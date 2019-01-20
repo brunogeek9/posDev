@@ -1,10 +1,11 @@
 #!/bin/sh
+#contamos sempre que você esteja logado como root para executar o script
 clear
-alias instalar_sublime='add-apt-repository ppa:webupd8team/sublime-text-3 && apt update && apt install sublime-text-installer'
-alias instalar_atom='add-apt-repository ppa:webupd8team/atom && apt update && apt install atom'
+alias instalar_vscode = 'snap install vscode --classic'
 alias instalar_mysql='apt install mysql-server mysql-client mysql-workbench'
 alias instalar_JDK='add-apt-repository ppa:webupd8team/java && apt update && apt install oracle-java8-installer'
-alias instalar_midia='apt install vlc qbittorrent comix ubuntu-restricted-extras'
+alias instalar_midia='apt install vlc qbittorrent ubuntu-restricted-extras'
+alias comics='snap install qcomicbook'
 alias jogar='apt install wine winetricks playonlinux'
 while true; do
 echo "==========================================================
@@ -33,7 +34,7 @@ case $op in
       #echo ;;
       echo "IDEs instaladas"
       instalar_sublime
-      instalar_atom;;
+      instalar_vscode;;
       #echo
       #echo "IDEs instaladas"
       #echo ;;

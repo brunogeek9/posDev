@@ -1,20 +1,22 @@
 #!/bin/sh
 #contamos sempre que você esteja logado como root para executar o script
 clear
-alias instalar_vscode = 'snap install vscode --classic'
+alias instalar_vscode ='snap install vscode'
 alias instalar_mysql='apt install mysql-server mysql-client mysql-workbench'
 alias instalar_JDK='add-apt-repository ppa:webupd8team/java && apt update && apt install oracle-java8-installer'
 alias instalar_midia='apt install vlc qbittorrent ubuntu-restricted-extras'
 alias comics='snap install qcomicbook'
 alias jogar='apt install wine winetricks playonlinux'
+alias instalar_web='apt install qbittorrent && snap install brave'
 while true; do
 echo "==========================================================
         Digite o número do componente a ser instalado:
-        1 - Minhas IDEs
+        1 - vscode
         2 - Mysql
         3 - Java JDK
-        4 - Midia (vlc + audaciti + codecs + comix)
-        5 - Sobre
+        4 - Midia (vlc + codecs + leitor de quadrinhos)
+        5 - Internet pack (brave browser + qbittorrent)
+        6 - Sobre 
         0 - Sair
 ==========================================================="
 echo -n "->OPÇÃO:  "
@@ -33,7 +35,6 @@ case $op in
       #echo "Instalando IDEs"
       #echo ;;
       echo "IDEs instaladas"
-      instalar_sublime
       instalar_vscode;;
       #echo
       #echo "IDEs instaladas"
@@ -50,11 +51,17 @@ case $op in
         echo ;;
     4)
         instalar_midia
+        comics
         echo
         echo "Instalando meus softwares de midia"
         echo ;;
-    5)
+    
+    5)  instalar_web
         echo
+        echo "Instalando o brave browser e o qbittorrent"
+        echo ;;
+        
+    6)  echo
         echo "O que e instalado em cada opção? "
         echo "Em Cada opção e instalado um grupo de softwares uteis em minha vida como desenvolvedor"
         echo "minhas IDEs : são instalado o sublimetext e o atom,softwares muito utilizados no desenvolvimento de software"
@@ -62,6 +69,7 @@ case $op in
         echo "java JDK: e adicionado o PPA do jdk e o mesmo e instalado"
         echo "Midia : são instalados o vlc,comix e extras como codecs de midia e adobeflash player"
         echo ;;
+    
     0)
         echo "Saindo..."
         exit;;
